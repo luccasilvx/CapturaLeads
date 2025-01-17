@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captação de Leads</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<section class="section-form">
+    <div class="container-form">
+        <div class="box-form">
+            <div class="box-header-form">
+                <h1 class="title-form">Matricule-se já</h1>
+                <form action="">
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome" class="input-nome" required>
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="input-email" required>
+                    <input type="text" name="telefone" id="telefone" placeholder="Digite seu telefone" class="input-numero" required>
+                    <input type="hidden" id="curso_id" name="curso_id">
+                    <select id="cursos" name="cursos" class="input-curso">
+                        <option value="1">Administração</option>
+                        <option value="2">Direito</option>
+                        <option value="3">Economia</option>
+                        <option value="4">Engenharia de Computação</option>
+                        <option value="5">Marketing</option>
+                    </select>
+                    <div class="box-button">
+                        <button class="botao-matricular" type="submit">MATRICULAR !</button>
+                    </div>
+                </form>
+                <div id="notificacao" style="display: none; background-color: #4CAF50; color: white; padding: 10px; margin-top: 20px;">
+                    Aluno cadastrado com sucesso!
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

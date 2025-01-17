@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+.container-form{
+    padding-top: 4rem;
+}
+.box-form{
+    padding-top: 3rem;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(207, 212, 211);
+    margin: 0 5rem 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.box-header-form{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border: 2px;
+    border-radius: 5px;
+    flex-direction: column;
+}
+.title-form{
+    color: #f4f4f4;
+    margin-bottom: 1rem;
+}
+.input-nome, .input-email, .input-numero, .input-curso{
+    display: flex;
+    border: none;
+    border-radius: 5px;
+    flex-direction: column;
+    margin-bottom: 0.7rem;
+}
+.box-button{
+    display: flex;
+    justify-content: center;
+    padding: 1.7rem;
+}
+.botao-matricular{
+    display: flex;
+    border: none;
+    border-radius: 8px;
+    width: 4rem;
+    height: 1.5rem;
+    font-size: 0.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.botao-matricular:hover{
+    cursor: pointer;
+    transition: 0.7s;
+    background-color: rgb(69, 241, 184);
+}
