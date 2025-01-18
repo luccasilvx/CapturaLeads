@@ -1,44 +1,57 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Captação de Leads</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Matricule-se já</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/lucide-static/font/lucide.css" rel="stylesheet">
 </head>
 <body>
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <i class="lucide-graduation-cap"></i>
+            <h1>Matricule-se já</h1>
+        </div>
 
-<section class="section-form">
-    <div class="container-form">
-        <div class="box-form">
-            <div class="box-header-form">
-                <h1 class="title-form">Matricule-se já</h1>
-                <form action="">
-                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome" class="input-nome" required>
-                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="input-email" required>
-                    <input type="text" name="telefone" id="telefone" placeholder="Digite seu telefone" class="input-numero" required>
-                    <input type="hidden" id="curso_id" name="curso_id">
-                    <select id="cursos" name="cursos" class="input-curso">
-                        <option value="1">Administração</option>
-                        <option value="2">Direito</option>
-                        <option value="3">Economia</option>
-                        <option value="4">Engenharia de Computação</option>
-                        <option value="5">Marketing</option>
-                    </select>
-                    <div class="box-button">
-                        <button class="botao-matricular" type="submit">MATRICULAR !</button>
-                    </div>
-                </form>
-                <div id="notificacao" style="display: none; background-color: #4CAF50; color: white; padding: 10px; margin-top: 20px;">
-                    Aluno cadastrado com sucesso!
-                </div>
+        <form id="enrollment-form">
+            <div class="input-group">
+                <i class="lucide-user"></i>
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
             </div>
+
+            <div class="input-group">
+                <i class="lucide-mail"></i>
+                <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+            </div>
+
+            <div class="input-group">
+                <i class="lucide-phone"></i>
+                <input type="text" name="telefone" id="telefone" placeholder="Digite seu telefone" required>
+            </div>
+
+            <input type="hidden" id="curso_id" name="curso_id">
+
+            <div class="input-group select-group">
+                <select id="cursos" name="cursos">
+                    <option value="1">Administração</option>
+                    <option value="2">Direito</option>
+                    <option value="3">Economia</option>
+                    <option value="4">Engenharia de Computação</option>
+                    <option value="5">Marketing</option>
+                </select>
+                <i class="lucide-chevron-down"></i>
+            </div>
+
+            <button type="submit">MATRICULAR!</button>
+        </form>
+
+        <div id="notification" class="notification">
+            Aluno cadastrado com sucesso!
         </div>
     </div>
-</section>
+</div>
 
 <script src="script.js"></script>
-
-
 </body>
 </html>
