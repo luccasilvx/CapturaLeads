@@ -1,6 +1,9 @@
 package com.Captura.Leads.Service;
 
 import com.Captura.Leads.DTO.AlunoDTO;
+import com.Captura.Leads.Exceptions.MatriculaNotFoundException;
+import com.Captura.Leads.Exceptions.TurmaNotFoundException;
+import com.Captura.Leads.Exceptions.CursoNotFoundException;
 import com.Captura.Leads.Models.Aluno;
 import com.Captura.Leads.Models.Cursos;
 import com.Captura.Leads.Models.Turmas;
@@ -27,10 +30,10 @@ public class AlunoService {
     public Aluno salvarMatricula(AlunoDTO alunoDTO){
 
         Cursos cursos = cursosRepository.findById(alunoDTO.getCurso_id())
-                .orElseThrow(() -> new RuntimeException("Curso não encontrado"));
+                .orElseThrow(() -> new CursoNotFoundException("Curso com ID " + alunoDTO.getCurso_id() + " não encontrado."));
 
         Turmas turmas = turmasRepository.findById(alunoDTO.getCurso_id())
-                .orElseThrow(()-> new RuntimeException("Turma não encontrada para o curso"));
+                .orElseThrow(()-> new TurmaNotFoundException("Turma não encontrada para o curso com ID " + alunoDTO.getCurso_id() + "."));
 
         Aluno aluno = new Aluno();
         aluno.setNome(alunoDTO.getNome());
@@ -49,12 +52,12 @@ public class AlunoService {
 
     public Aluno buscarPorMatricula(Long codigo_matricula){
         return alunoRepository.findById(codigo_matricula)
-                .orElseThrow(()-> new RuntimeException("Aluno não encontrado no sistema"));
+                .orElseThrow(()-> new MatriculaNotFoundException("Aluno com a matrícula "+codigo_matricula+"não encontrado no sistema."));
     }
 
     public void deletarPorMatricula(Long codigo_matricula){
         Aluno aluno= alunoRepository.findById(codigo_matricula)
-                .orElseThrow(()-> new RuntimeException("Matricula não encontrada."));
+                .orElseThrow(()-> new RuntimeException("A matrícula "+codigo_matricula+" não foi encontrada."));
         alunoRepository.delete(aluno);
     }
 

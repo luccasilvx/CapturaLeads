@@ -31,9 +31,8 @@ public class AlunoController {
 
     @GetMapping("/buscar_matricula/{codigo_matricula}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Aluno> buscarPorMatricula(@PathVariable Long codigo_matricula){
-        Aluno aluno = alunoService.buscarPorMatricula(codigo_matricula);
-        return ResponseEntity.ok(aluno);
+    public Aluno buscarPorMatricula(@PathVariable Long codigo_matricula){
+        return alunoService.buscarPorMatricula(codigo_matricula);
     }
 
     @DeleteMapping("/excluir_matricula/{codigo_matricula}")
